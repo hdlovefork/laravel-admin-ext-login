@@ -14,16 +14,18 @@ In the extensions section of the `config/admin.php` file, add configurations
 ```
 'extensions' => [
      'login' => [
-         // set to false if you want to disable this extension
-         'enable' => true,
-         
+          // set to false if you want to disable this extension
+         'verification_code_enable' => env('APP_ENV')==='production',
+     
          // configuration
          'maxAttempts'  => 5,
-         'decayMinutes' => 1,         
+         'decayMinutes' => 1,
          
-         'logo_path'=>'',
-         'logo_text'=>'',
-         'background_image_path'=>''
+         'logoPath'=>'',
+         'logoText'=>'',
+         'backgroundImagePath'=>'',
+         
+         'pageTitle'=>''
     ]
 ]
 ```
