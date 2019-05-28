@@ -34,11 +34,7 @@ class LoginController extends BaseAuthController
     {
         $credentials = $request->only([$this->username(), 'password', 'captcha']);
         /** @var \Illuminate\Validation\Validator $validator */
-        $validator = Validator::make($credentials, [
-            $this->username() => 'required',
-            'password'        => 'required',
-            'captcha'         => 'required|captcha',
-        ]);
+        $validator = Validator::make($credentials, $this->loginRules());
         if ($validator->fails()) {
             return back()->withInput()->withErrors($validator);
         }
@@ -54,5 +50,17 @@ class LoginController extends BaseAuthController
         return back()->withInput()->withErrors([
             $this->username() => $this->getFailedLoginMessage(),
         ]);
+    }
+    
+    protected function loginRules()
+    {
+        $rules = [
+            $this->username() => 'required',
+            'password'        => 'required'
+        ];
+        if (Login::config('verification_code_enable')) {
+            $rules['captcha'] = 'required|captcha';
+        }
+        return $rules;
     }
 }
