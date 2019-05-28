@@ -16,8 +16,11 @@ In the extensions section of the `config/admin.php` file, add configurations
 ```
 'extensions' => [
      'login' => [
-          // set to false if you want to disable this extension
-         'verification_code_enable' => env('APP_ENV')==='production',
+         // set to false if you want to disable this extension
+          'enable'=>true,
+          
+         // set to false if you want to disable captcha validation
+         'verificationCodeEnable' => env('APP_ENV')==='production',
      
          // configuration
          'maxAttempts'  => 5,

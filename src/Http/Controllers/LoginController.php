@@ -58,7 +58,7 @@ class LoginController extends BaseAuthController
             $this->username() => 'required',
             'password'        => 'required'
         ];
-        if (Login::config('verification_code_enable')) {
+        if (Login::config('verificationCodeEnable')) {
             $rules['captcha'] = 'required|captcha';
         }
         return $rules;
