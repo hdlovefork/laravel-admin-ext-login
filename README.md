@@ -6,6 +6,8 @@ Nice login page and Add captcha and login attempts for laravel-admin
 
 ```
 composer require dean/login
+
+php artisan vendor:publish --tag dean-login
 ```
 
 ### Configuration
