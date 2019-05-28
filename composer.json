@@ -1,14 +1,14 @@
 {
     "name": "dean/login",
-    "description": "description...",
+    "description": "Nice login page and Add captcha and login attempts for laravel-admin",
     "type": "library",
-    "keywords": ["laravel-admin", "extension"],
-    "homepage": "https://github.com/dean/login",
+    "keywords": ["laravel-admin", "extension","login"],
+    "homepage": "https://github.com/hdlovefork/laravel-admin-ext-login",
     "license": "MIT",
     "authors": [
         {
-            "name": "your name",
-            "email": "your email"
+            "name": "Dean",
+            "email": "1602264241@qq.com"
         }
     ],
     "require": {
