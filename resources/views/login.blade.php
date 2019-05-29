@@ -46,7 +46,7 @@
                 </div>
 
             </div>
-            @if(\Dean\Login\Login::config('verification_code_enable'))
+            @if(\Dean\Login\Login::config('verificationCodeEnable'))
             <div class="form-group">
                 <div class="input-group">
                     <input type="text" class="form-control" id="verify" name="captcha" placeholder="{{ trans('admin.captcha') }}">
